@@ -1,2 +1,3 @@
+docker-build.patch
 clean-config.patch
 systray.patch
