@@ -1,5 +1,5 @@
-clean-config.patch
-config.patch
-docker-build.patch
-systray.patch
-centered-master.patch
+personal/clean-config.patch
+personal/config.patch
+personal/dockerized-build.patch
+suckless.org/systray.patch
+suckless.org/centered-master.patch
