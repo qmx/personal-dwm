@@ -1,3 +1,4 @@
+config.patch
 centered-master.patch
 docker-build.patch
 clean-config.patch
