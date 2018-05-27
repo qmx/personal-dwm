@@ -1,3 +1,4 @@
 [submodule "dwm"]
 	path = dwm
 	url = http://git.suckless.org/dwm
+	ignore = dirty
