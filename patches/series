@@ -1,5 +1,5 @@
-config.patch
-centered-master.patch
-docker-build.patch
 clean-config.patch
+config.patch
+docker-build.patch
 systray.patch
+centered-master.patch

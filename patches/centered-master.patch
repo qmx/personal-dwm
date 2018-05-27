@@ -2,7 +2,7 @@ Index: personal-dwm/dwm/config.def.h
 ===================================================================
 --- personal-dwm.orig/dwm/config.def.h
 +++ personal-dwm/dwm/config.def.h
-@@ -41,6 +41,8 @@ static const Layout layouts[] = {
+@@ -45,6 +45,8 @@ static const Layout layouts[] = {
  	{ "[]=",      tile },    /* first entry is default */
  	{ "><>",      NULL },    /* no layout function means floating behavior */
  	{ "[M]",      monocle },
@@ -11,7 +11,7 @@ Index: personal-dwm/dwm/config.def.h
  };
  
  /* key definitions */
-@@ -76,6 +78,8 @@ static Key keys[] = {
+@@ -80,6 +82,8 @@ static Key keys[] = {
  	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
  	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
  	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
@@ -24,7 +24,7 @@ Index: personal-dwm/dwm/dwm.c
 ===================================================================
 --- personal-dwm.orig/dwm/dwm.c
 +++ personal-dwm/dwm/dwm.c
-@@ -233,6 +233,8 @@ static int xerror(Display *dpy, XErrorEv
+@@ -267,6 +267,8 @@ static int xerror(Display *dpy, XErrorEv
  static int xerrordummy(Display *dpy, XErrorEvent *ee);
  static int xerrorstart(Display *dpy, XErrorEvent *ee);
  static void zoom(const Arg *arg);
@@ -32,8 +32,8 @@ Index: personal-dwm/dwm/dwm.c
 +static void centeredfloatingmaster(Monitor *m);
  
  /* variables */
- static const char broken[] = "broken";
-@@ -2147,3 +2149,106 @@ main(int argc, char *argv[])
+ static Systray *systray =  NULL;
+@@ -2494,3 +2496,106 @@ main(int argc, char *argv[])
  	XCloseDisplay(dpy);
  	return EXIT_SUCCESS;
  }
