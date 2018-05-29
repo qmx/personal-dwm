@@ -4,3 +4,4 @@ suckless.org/centered-master.patch
 personal/clean-config.patch
 personal/config.patch
 personal/dockerized-build.patch
+personal/version.patch
