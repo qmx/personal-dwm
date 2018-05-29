@@ -18,5 +18,5 @@ Index: personal-dwm/dwm/config.def.h
 -static const char *termcmd[]  = { "st", NULL };
 +static const char *termcmd[]  = { "stterm", NULL };
  
- #include "selfrestart.c"
- 
+ static Key keys[] = {
+ 	/* modifier                     key        function        argument */

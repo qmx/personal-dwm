@@ -11,7 +11,7 @@ Index: personal-dwm/dwm/config.def.h
  };
  
  /* key definitions */
-@@ -82,6 +84,8 @@ static Key keys[] = {
+@@ -80,6 +82,8 @@ static Key keys[] = {
  	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
  	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
  	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
