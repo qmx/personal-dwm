@@ -5,7 +5,7 @@ Index: personal-dwm/dwm/config.mk
 @@ -1,5 +1,5 @@
  # dwm version
 -VERSION = 6.1
-+VERSION = "dwm-6.1-qmx-39321fc"
++VERSION = "6.1-qmx-49c0be0"
  
  # Customize below to fit your system
  
