@@ -2,7 +2,7 @@ Index: personal-dwm/dwm/config.def.h
 ===================================================================
 --- personal-dwm.orig/dwm/config.def.h
 +++ personal-dwm/dwm/config.def.h
-@@ -94,6 +94,7 @@ static Key keys[] = {
+@@ -102,6 +102,7 @@ static Key keys[] = {
  	TAGKEYS(                        XK_8,                      7)
  	TAGKEYS(                        XK_9,                      8)
  	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
@@ -42,24 +42,24 @@ Index: personal-dwm/dwm/dwm.c
 ===================================================================
 --- personal-dwm.orig/dwm/dwm.c
 +++ personal-dwm/dwm/dwm.c
-@@ -205,6 +205,8 @@ static void setup(void);
+@@ -234,6 +234,8 @@ static void setup(void);
  static void seturgent(Client *c, int urg);
  static void showhide(Client *c);
  static void sigchld(int unused);
 +static void sighup(int unused);
 +static void sigterm(int unused);
  static void spawn(const Arg *arg);
+ static Monitor *systraytomon(Monitor *m);
  static void tag(const Arg *arg);
- static void tagmon(const Arg *arg);
-@@ -260,6 +262,7 @@ static void (*handler[LASTEvent]) (XEven
+@@ -298,6 +300,7 @@ static void (*handler[LASTEvent]) (XEven
  	[UnmapNotify] = unmapnotify
  };
- static Atom wmatom[WMLast], netatom[NetLast];
+ static Atom wmatom[WMLast], netatom[NetLast], xatom[XLast];
 +static int restart = 0;
  static int running = 1;
  static Cur *cursor[CurLast];
  static Clr **scheme;
-@@ -1248,6 +1251,7 @@ propertynotify(XEvent *e)
+@@ -1379,6 +1382,7 @@ propertynotify(XEvent *e)
  void
  quit(const Arg *arg)
  {
@@ -67,7 +67,7 @@ Index: personal-dwm/dwm/dwm.c
  	running = 0;
  }
  
-@@ -1536,6 +1540,9 @@ setup(void)
+@@ -1712,6 +1716,9 @@ setup(void)
  	/* clean up any zombies immediately */
  	sigchld(0);
  
@@ -77,7 +77,7 @@ Index: personal-dwm/dwm/dwm.c
  	/* init screen */
  	screen = DefaultScreen(dpy);
  	sw = DisplayWidth(dpy, screen);
-@@ -1637,6 +1644,20 @@ sigchld(int unused)
+@@ -1822,6 +1829,20 @@ sigchld(int unused)
  }
  
  void
@@ -98,7 +98,7 @@ Index: personal-dwm/dwm/dwm.c
  spawn(const Arg *arg)
  {
  	if (arg->v == dmenucmd)
-@@ -2143,6 +2164,7 @@ main(int argc, char *argv[])
+@@ -2492,6 +2513,7 @@ main(int argc, char *argv[])
  #endif /* __OpenBSD__ */
  	scan();
  	run();

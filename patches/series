@@ -1,5 +1,6 @@
 suckless.org/systray.patch
 suckless.org/centered-master.patch
+suckless.org/restartsig.patch
 personal/clean-config.patch
 personal/version.patch
 personal/config.patch
