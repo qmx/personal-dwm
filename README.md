@@ -9,4 +9,4 @@ To apply the patches:
 
 To build using the dockerized build:
 
-`cd dwm && make docker-build`
+`make docker-build`
